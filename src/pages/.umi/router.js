@@ -65,6 +65,42 @@ let routes = [
         "exact": true
       },
       {
+        "name": "二级路由测试",
+        "path": "/",
+        "icon": "sun",
+        "auth": [
+          "",
+          ""
+        ],
+        "routes": [
+          {
+            "path": "/pageA",
+            "name": "2级A",
+            "icon": "smile",
+            "component": _dvaDynamic({
+  
+  component: () => import('../pageA/a'),
+  LoadingComponent: require('/Users/likeju/workSpace/cms-base-project/base-ant-design-pro/src/components/PageLoading/index').default,
+}),
+            "exact": true
+          },
+          {
+            "path": "/pageB",
+            "name": "2级B",
+            "icon": "smile",
+            "component": _dvaDynamic({
+  
+  component: () => import('../test'),
+  LoadingComponent: require('/Users/likeju/workSpace/cms-base-project/base-ant-design-pro/src/components/PageLoading/index').default,
+}),
+            "exact": true
+          },
+          {
+            "component": () => React.createElement(require('/Users/likeju/workSpace/cms-base-project/base-ant-design-pro/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+          }
+        ]
+      },
+      {
         "component": () => React.createElement(require('/Users/likeju/workSpace/cms-base-project/base-ant-design-pro/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
       }
     ]

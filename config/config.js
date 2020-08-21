@@ -64,6 +64,26 @@ export default {
           name: 'test',
           component: './test',
         },
+        {
+          name: '二级路由测试',
+          path: '/',
+          icon: 'sun',
+          auth:['',''],
+          routes: [
+            {
+              path: '/pageA',
+              name: '2级A',
+              icon: 'smile',
+              component: './pageA/a'
+            },
+            {
+              path: '/pageB',
+              name: '2级B',
+              icon: 'smile',
+              component: './test'
+            },
+          ],
+        },
       ],
     },
   ],
